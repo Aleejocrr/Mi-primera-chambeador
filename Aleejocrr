@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insultos Cíclicos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #container {
+            text-align: center;
+        }
+        #insulto {
+            margin: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="insulto">Presiona el botón para el primer insulto</div>
+    <button onclick="siguienteInsulto()">SIGUIENTE INSULTO</button>
+</div>
+
+<script>
+    const insultos = [
+        "monsalve xupalo",
+        "monsalve weko",
+        "monsalve chupa la que cuelga",
+        "monsalve enfermo qlo"
+    ];
+
+    let indice = 0;
+
+    function siguienteInsulto() {
+        document.getElementById("insulto").innerText = insultos[indice];
+        indice = (indice + 1) % insultos.length; // Ciclo que se repite
+    }
+</script>
+
+</body>
+</html>
